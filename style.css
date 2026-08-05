@@ -783,3 +783,232 @@ footer {
 .btn-google-reviews i {
     font-size: 1.1rem;
 }
+
+/* =====================
+   COTIZACIÓN
+===================== */
+.cotizacion {
+    padding: 90px 5%;
+    background-color: #f0f4f8;
+}
+
+.cotizacion-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cotizacion-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #d9534f;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.cotizacion-header h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #0d1b2a;
+    line-height: 1.15;
+    margin-bottom: 12px;
+}
+
+.cotizacion-header p {
+    color: #64748b;
+    font-size: 1rem;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.65;
+}
+
+.cotizacion-card {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(13, 27, 42, 0.1);
+    overflow: hidden;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.cotizacion-card-top {
+    background: linear-gradient(135deg, #0d1b2a 0%, #1a2a40 60%, #1e3a5f 100%);
+    padding: 28px 36px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.cotizacion-card-top > i {
+    font-size: 1.8rem;
+    color: #ff8c00;
+}
+
+.cotizacion-card-top div h3 {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.cotizacion-card-top div p {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.85rem;
+}
+
+.cotizacion-body {
+    padding: 36px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group.full { grid-column: 1 / -1; }
+
+.form-group label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #374151;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    color: #0d1b2a;
+    background: #f8fafc;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    outline: none;
+    appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #0056b3;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+}
+
+.form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230056b3' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+    line-height: 1.6;
+}
+
+.form-divider {
+    border: none;
+    border-top: 1.5px solid #f0f4f8;
+    margin: 8px 0 24px;
+}
+
+.urgencia-group { margin-bottom: 24px; }
+
+.urgencia-group label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #374151;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.urgencia-opciones {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.urgencia-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 18px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 50px;
+    background: #f8fafc;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+}
+
+.urgencia-btn:hover { border-color: #0056b3; color: #0056b3; background: #eff6ff; }
+.urgencia-btn.active { border-color: #0056b3; color: #0056b3; background: #eff6ff; font-weight: 600; }
+.urgencia-btn.activa-urgente { border-color: #d9534f; color: #d9534f; background: #fff5f5; }
+
+.btn-enviar {
+    width: 100%;
+    padding: 17px 30px;
+    background: linear-gradient(135deg, #25d366 0%, #1db954 100%);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+}
+
+.btn-enviar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45);
+}
+
+.nota-privacidad {
+    text-align: center;
+    margin-top: 14px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+@media (max-width: 600px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .cotizacion-body { padding: 24px 20px; }
+    .cotizacion-card-top { padding: 22px 20px; }
+    .cotizacion-header h2 { font-size: 1.9rem; }
+}

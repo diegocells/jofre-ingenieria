@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <!-- HEADER -->
@@ -24,6 +25,7 @@
                 <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#cobertura">Cobertura</a></li>
+                <li><a href="#cotizacion">Cotización</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -203,7 +205,86 @@
                 </div>
             </div>
         </section>
+        <!-- COTIZACIÓN -->
+        <section class="cotizacion" id="cotizacion">
+            <div class="cotizacion-header">
+                <div class="cotizacion-eyebrow">
+                    <i class="fas fa-bolt"></i> Cotización rápida
+                </div>
+                <h2>Cotiza tu <span class="highlight">servicio eléctrico</span></h2>
+                <p>Completa el formulario y te enviamos la cotización directamente por WhatsApp en minutos.</p>
+            </div>
 
+            <div class="cotizacion-card">
+                <div class="cotizacion-card-top">
+                    <i class="fas fa-file-invoice"></i>
+                    <div>
+                        <h3>Formulario de cotización</h3>
+                        <p>Jofre Ingeniería y Servicios Eléctricos SpA · Rancagua, O'Higgins</p>
+                    </div>
+                </div>
+                <div class="cotizacion-body">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Nombre completo</label>
+                            <input type="text" id="nombre" placeholder="Tu nombre" />
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono</label>
+                            <input type="tel" id="telefono" placeholder="+56 9 XXXX XXXX" />
+                        </div>
+                        <div class="form-group">
+                            <label>Tipo de servicio</label>
+                            <select id="servicio">
+                                <option value="">Selecciona un servicio</option>
+                                <option>Instalaciones Eléctricas y Mantenimiento</option>
+                                <option>Empalmes Eléctricos y Aumento de Potencia</option>
+                                <option>Proyectos Inmobiliarios y Postación MT / BT</option>
+                                <option>Atención de Fallas 24 Horas</option>
+                                <option>Ingeniería, Planos Eléctricos, Medición y Cálculos</option>
+                                <option>Sistemas de Autogeneración (Solar y Eólica)</option>
+                                <option>Automatización, Telemetría y Análisis de Datos</option>
+                                <option>Subestaciones Eléctricas</option>
+                                <option>Electromovilidad</option>
+                                <option>Trámites Eléctricos SEC</option>
+                                <option>Pruebas y Ensayos – Informe Verificación Inicial RIC 19</option>
+                                <option>Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Comuna</label>
+                            <input type="text" id="comuna" placeholder="Ej: Rancagua" />
+                        </div>
+                        <div class="form-group full">
+                            <label>Descripción del trabajo</label>
+                            <textarea id="descripcion" placeholder="Describe brevemente lo que necesitas..."></textarea>
+                        </div>
+                    </div>
+                    <hr class="form-divider">
+                    <div class="urgencia-group">
+                        <label>Urgencia</label>
+                        <div class="urgencia-opciones">
+                            <button class="urgencia-btn" onclick="selectUrgencia(this, 'normal')">
+                                <i class="fas fa-calendar-check"></i> Sin urgencia
+                            </button>
+                            <button class="urgencia-btn" onclick="selectUrgencia(this, 'esta semana')">
+                                <i class="fas fa-clock"></i> Esta semana
+                            </button>
+                            <button class="urgencia-btn activa-urgente" onclick="selectUrgencia(this, 'urgente 24h')">
+                                <i class="fas fa-bolt"></i> Urgente 24h
+                            </button>
+                        </div>
+                    </div>
+                    <button class="btn-enviar" onclick="enviarWhatsApp()">
+                        <i class="fab fa-whatsapp"></i> Enviar cotización por WhatsApp
+                    </button>
+                    <p class="nota-privacidad">
+                        <i class="fas fa-lock"></i>
+                        Tus datos solo se usan para responder tu cotización
+                    </p>
+                </div>
+            </div>
+        </section>
         <!-- TESTIMONIOS -->
         <section class="testimonials">
             <div class="testimonials-container">
@@ -220,11 +301,6 @@
                          <i class="fab fa-google"></i> Ver reseñas en Google
                         </a>
                         </div>
-                    </div>
-                    <div class="testimonial-dots">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
                     </div>
                 </div>
             </div>
@@ -254,7 +330,7 @@
                         <div class="contact-card-icon blue"><i class="fas fa-clock"></i></div>
                         <div>
                             <span class="contact-label">HORARIO DE ATENCIÓN</span>
-                            <strong>Lunes a sábado: 8:00 hrs – 20:00 hrs</strong>
+                            <strong>Lunes a sábado: 8:00 – 20:00 </strong>
                             <p>Domingos: Cerrado</p>
                         </div>
                     </div>
@@ -284,7 +360,7 @@
                 <div class="social-icons">
                     <a href="https://wa.me/56944652385" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/jofreingenieria/" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
@@ -334,6 +410,46 @@
                 header.classList.remove('scrolled');
             }
         });
+    </script>
+
+    <script>
+        let urgenciaSeleccionada = 'urgente 24h';
+
+        function selectUrgencia(btn, valor) {
+            document.querySelectorAll('.urgencia-btn').forEach(b => {
+                b.classList.remove('active', 'activa-urgente');
+            });
+            btn.classList.add(valor === 'urgente 24h' ? 'activa-urgente' : 'active');
+            urgenciaSeleccionada = valor;
+        }
+
+        function enviarWhatsApp() {
+            const nombre      = document.getElementById('nombre').value.trim();
+            const telefono    = document.getElementById('telefono').value.trim();
+            const servicio    = document.getElementById('servicio').value;
+            const comuna      = document.getElementById('comuna').value.trim();
+            const descripcion = document.getElementById('descripcion').value.trim();
+
+            if (!nombre || !telefono || !servicio || !comuna) {
+                alert('Por favor completa todos los campos obligatorios.');
+                return;
+            }
+
+            const mensaje =
+    `👋 *Nueva solicitud de cotización*
+
+    👤 *Nombre:* ${nombre}
+    📞 *Teléfono:* ${telefono}
+    ⚡ *Servicio:* ${servicio}
+    📍 *Comuna:* ${comuna}
+    🕐 *Urgencia:* ${urgenciaSeleccionada}
+    📝 *Descripción:* ${descripcion || 'Sin descripción adicional'}
+
+    _Enviado desde jofreingenieria.cl_`;
+
+            const url = `https://wa.me/56944652385?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        }
     </script>
 
 </body>
